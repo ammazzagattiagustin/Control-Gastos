@@ -30,13 +30,13 @@ const Modal = ({
 
     const ocultarModal = () => {
         setAnimarModal(false)
-        setGastoEditar({})
+        setGastoEditar({}) // lo reseteo
         setTimeout(() => {
             setModal(false)
         }, 500);
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         if ([nombre, cantidad, categoria].includes('')) {
@@ -44,7 +44,7 @@ const Modal = ({
 
             setTimeout(() => {
                 setMensaje('')
-            }, 3000)
+            }, 3000) // para que el msj de arriba desapareza a los 3 segundos
             return
         }
 

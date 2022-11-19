@@ -1,4 +1,3 @@
-import React from 'react'
 import Gasto from './Gasto'
 
 const ListadoGastos = ({
@@ -10,7 +9,6 @@ const ListadoGastos = ({
 }) => {
     return (
         <div className="listado-gastos contenedor">
-
 
             {filtro ? (
                 <>

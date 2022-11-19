@@ -15,7 +15,7 @@ const NuevoPresupuesto = ({
         // Validación:
         if (!presupuesto || presupuesto < 0) {
             setMensaje('No es un presupuesto válido')
-            return;  // con este return detenemos la ejecución del código
+            return  // con este return detenemos la ejecución del código
         }
         setMensaje('')
         setIsValidPresupuesto(true)

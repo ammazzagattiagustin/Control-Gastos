@@ -20,14 +20,15 @@ const ControlPresupuesto = ({
         const totalDisponible = presupuesto - totalGastado;
 
         // Calcular el porcentaje gastado
-        const nuevoPorcentaje = (((presupuesto - totalDisponible) / presupuesto) * 100).toFixed(2);
-
+        const nuevoPorcentaje = (((presupuesto - totalDisponible) / presupuesto) * 100).toFixed(2); // toFixed(2) es para que muestre únicamente dos decimales
 
         setDisponible(totalDisponible)
         setGastado(totalGastado)
+
         setTimeout(() => {
             setPorcentaje(nuevoPorcentaje)
         }, 1500);
+
     }, [gastos])
 
 
@@ -42,8 +43,8 @@ const ControlPresupuesto = ({
         const resultado = confirm('¿Deseas reiniciar presupuesto y gastos?');
 
         if (resultado) {
-            setGastos([])
-            setPresupuesto(0)
+            setGastos([]) // reseteo los gastos
+            setPresupuesto(0) // reseteo el presupuesto
             setIsValidPresupuesto(false)
         }
     }
@@ -56,7 +57,7 @@ const ControlPresupuesto = ({
                         pathColor: porcentaje > 100 ? '#DC2626' : '#3B82F6',
                         trailColor: '#F5F5F5',
                         textColor: porcentaje > 100 ? '#DC2626' : '#3B82F6',
-                    })}
+                    })} // buildStyles -> propiedad de la librería, para sobreescribir los estilos que vienen por defecto
                     value={porcentaje}
                     text={`${porcentaje}% Gastado`}
                 />
@@ -70,6 +71,7 @@ const ControlPresupuesto = ({
                 >
                     Resetear App
                 </button>
+
                 <p>
                     <span>Presupuesto: </span>{formatearCantidad(presupuesto)}
                 </p>

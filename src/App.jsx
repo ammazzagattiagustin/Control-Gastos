@@ -63,14 +63,14 @@ function App() {
 
   const handleNuevoGasto = () => {
     setModal(true)
-    setGastoEditar({})
+    setGastoEditar({}) // lo reseteo 
 
     setTimeout(() => {
       setAnimarModal(true)
     }, 500);
   }
 
-  const guardarGasto = gasto => {
+  const guardarGasto = (gasto) => {
     if (gasto.id) {
       // Actualizar
       const gastosActualizados = gastos.map(gastoState => gastoState.id === gasto.id ? gasto : gastoState)
@@ -88,7 +88,7 @@ function App() {
     }, 500);
   }
 
-  const eliminarGasto = id => {
+  const eliminarGasto = (id) => {
     const gastosActualizados = gastos.filter(gasto => gasto.id !== id);
     setGastos(gastosActualizados);
   }
@@ -119,6 +119,7 @@ function App() {
               gastosFiltrados={gastosFiltrados}
             />
           </main>
+
           <div className="nuevo-gasto">
             <img
               src={IconoNuevoGasto}
